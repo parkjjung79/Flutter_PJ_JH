@@ -49,7 +49,6 @@ void main(List<String> args) {
   Map<String,String> actor = {"이름":"강동원",
   "나이":"40"};
   print(actor);
-  
 
 
 

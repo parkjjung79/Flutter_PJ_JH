@@ -17,7 +17,7 @@ void main(List<String> args) {
     -> 다른함수에 실행코드를 전달할 경우 주로 사용됨
     형식 : (){코드}
     예) 호출 -> 함수명((){코드})
-        받음 -> void 함수(Function ff) {ff();}
+        받음 -> void 함수(Function 헐) {헐();}
 
     3. 람다함수 :
     함수형 변수로 선언후 화살표로 리턴 또는 실행코드 작성
@@ -49,7 +49,8 @@ void main(List<String> args) {
   });
 
   // 람다함수 연습
-  showTxt('"아직 신에게는 12척의 배가 남았습니다!" 이 대사가 나오는 이순신의 전투는? ${leeFight[0]}');
+  showTxt('"아직 신에게는 12척의 배가 남았습니다!" 이 대사가 나오는 이순신의 전투는? ${retVal(leeFight[0])}');
+  
 
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
@@ -58,23 +59,50 @@ void main(List<String> args) {
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
   showTxt('이순신의 부하중 이순신이 있었다. 그는 전투전에 너무 긴장 되어서 구구단을 외웠다! 9단!');
-  
-  // 구구단 출력
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
-  
- 
-  
 
+  // 구구단출력!
+  gugu(9);
+  showTxt('옆사람도 불안하여 7단을 외웠다');
+  gugu(7);
+  
+  // 구구단 출력! -> 내가한거
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  // showTxt('구구단 9단 시작! 9x${++num} = ${gudan()}');
+  
 } ////////////////////////// main ////////////////////////////
 
+// 쌤이 만든 구구단 함수
+void gugu (int x) {
+  // 9단일때만 아이콘 다름, 나머지는 같음 
+  String icon = "";
+
+  if(x==9) {
+    icon = "😡";
+  }
+  else{
+    icon = "🐷";
+  }
+  print('$icon$x 단');
+  //for문
+  for(int i=1;i<=9;i++){
+    print("$x × $i ＝ ${x*i}"); 
+  } ////// for //////
+}
+
+
+// 내가 만든 구구단 함수
+// int gumultiple = 0;
+// int num = 0;
+
+// // 람다식으로 구구단 만드는 함수
+// Function gudan = () => 9*(++gumultiple);
 
 
 
@@ -91,21 +119,25 @@ void japanShip(Function bomb){
 
 } ////////////// japanShip 함수 //////////////
 
-int gumultiple = 0;
-int num = 0;
-
-// 람다식으로 구구단 만드는 함수
-Function gudan = () => 9*(++gumultiple);
 
 
 
 
 // 추천배우 변수
+// const Map<String,Map> recommActor = {};
 const recommActor = {
   '조인성': {'나이':42, '취미':'날기', '사는곳':'아무데나'},
   '공유': {'나이':45, '취미':'비오게하기', '사는곳':'공유하우스'}
 };
 
+
+// 이순신 전투 뒷말셋팅 함수
+// 결과리턴값의 형을 생각한다
+String retVal (String x){
+  return "$x${x=='한산'?'도대첩':'해전'}";
+  // 3항연산자 -> 조건문?코드1(true):코드2(false) 
+  // 조건이 true이면 코드1, false이면 코드2
+}
 
 // [ 다트의 상수 : final, const ] -> 함수바깥이면 전역변수
   

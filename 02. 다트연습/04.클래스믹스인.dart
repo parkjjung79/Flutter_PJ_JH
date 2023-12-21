@@ -36,12 +36,12 @@ void main(List<String> args) {
   // mixin class 클래스명{} -> 이렇게 생성하면 된다!
   Light light = new Light();
   print('개별인스턴스 광도:${light.luminosity}');
-  
+
   // 컴포지션 방법으로 다른 클래스 사용하기
   // 현대생성시 k엔진클래스를 내부에 생성함!
   HyunDai hd = HyunDai(K_Engine());
   print('현대차엔진 파워:${hd.k_engine.power}');
-  print('현대차엔진 주행거리:${hd.k_engigne.distance}');
+  print('현대차엔진 주행거리:${hd.k_engine.distance}');
 
 } //////////////// main ////////////////
 
@@ -83,18 +83,17 @@ mixin class Light{
 
 // 한국엔진을 현대차에서 사용하게함 (상속방법아님!)
 
-class K_Engine{
+  class K_Engine{
   // 출력
   int power = 8000;
   // 주행거리
   double distance = 500.0;
-
-  // 현대차 클래스
-  class HyunDai{
-    // 컴포지션방법 : 내부에서 외부 클래스 변수형선언함!
-    K-Engine k_engine;
-    // 생성자에 초기화 등록함!
-    HyunDai(this.k_enghine);
-
   }
-}
+ //  현대차 클래스
+class HyunDai{
+  // 컴포지션 방법 : 
+  // 1. 내부에 외부 클래스 변수형선언함!
+  K_Engine k_engine;
+  // 2. 생성자에 초기화등록함!
+  HyunDai(this.k_engine);
+  }

@@ -14,7 +14,7 @@ void main(List<String> args) {
     -> 정수형 숫자를 받아서 100을 더한 후 int형으로 리턴함
 
     2. 익명함수 : 이름없는 함수
-    -> 다른함수에 실행코드를 전달할 경우 주로 사용됨
+    -> 다른함수에 실코행코드를 전달할 경우 주로 사용됨
     형식 : (){코드}
     예) 호출 -> 함수명((){코드})
         받음 -> void 함수(Function 헐) {헐();}
@@ -50,7 +50,6 @@ void main(List<String> args) {
 
   // 람다함수 연습
   showTxt('"아직 신에게는 12척의 배가 남았습니다!" 이 대사가 나오는 이순신의 전투는? ${retVal(leeFight[0])}');
-  
 
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
@@ -101,9 +100,8 @@ void gugu (int x) {
 // int gumultiple = 0;
 // int num = 0;
 
-// // 람다식으로 구구단 만드는 함수
+// 람다식으로 구구단 만드는 함수
 // Function gudan = () => 9*(++gumultiple);
-
 
 
 int shipNum = 13;
@@ -115,12 +113,7 @@ void japanShip(Function bomb){
   print('나는 일본배야! 각오들해!');
   bomb();
 
-
-
 } ////////////// japanShip 함수 //////////////
-
-
-
 
 
 // 추천배우 변수

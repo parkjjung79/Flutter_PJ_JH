@@ -47,8 +47,10 @@ class StorePage extends StatelessWidget {
                 children: [
                   Text(
                     "Woman",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                    ),
                   ),
                   Spacer(), // 사이공간일정하게 띄기
                   Text(
@@ -58,6 +60,12 @@ class StorePage extends StatelessWidget {
                       fontSize: 20.0,
                       color: Colors.orange,
                     ),
+                  ),
+                  Spacer(), // 사이공간일정하게 띄기
+                  // 로고 이미지 추가! 이미지 위젯사용!
+                  Image.asset(
+                    'logo.png',
+                    width: 70.0,
                   ),
                   Spacer(), // 사이공간일정하게 띄기
                   Text(

@@ -42,6 +42,8 @@ Widget _buildHeaderProfile() {
   return Column(
     // 기본정렬은 중앙정렬임! 왼쪽정렬변경하기
     // start - 왼쪽정렬 / end - 오른쪽정렬
+    // cross -> 횡단
+    // crossAxisAlignment: CrossAxisAlignment.start, -> 가운데정렬
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(

@@ -8,13 +8,38 @@
 // ->>> 설치후 확인은 pubspec.yaml 파일에서함!(flutter_svg: ^2.0.9 -> 확인)
 
 import 'package:flutter/material.dart';
+// SVG를 읽기위한 추가설치 위젯
+import 'package:flutter_svg/flutter_svg.dart';
 
-class Loge extends StatelessWidget {
-  const Loge({Key? key}) : super(key: key);
+class Logo extends StatelessWidget {
+  // 타이틀 값을 입력받아 처리하기 위한 변수선언
+  final String title;
+  // 생성자함수에 전달변수로 처리(this키워드 사용)
+  const Logo(this.title,{Key? key}) : super(key: key);
 
   // 빌드 재정의!
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      children: [
+        // 1.SVG로고
+        SvgPicture.asset(
+          // svg이미지 경로설정
+          'assets/logo.svg',
+          // 크기지정(비율이 있으면 한쪽만씀)
+          width: 70,
+        ),
+        // 2.타이틀
+        Text(
+            // 생성자함수 호출시 값을 받아처리(글자)
+            title,
+            // 글자 스타일
+            style: TextStyle(
+              fontSize:  40,
+              fontWeight: FontWeight.bold,
+            ),
+            ),
+      ],
+    );
   }
 }
